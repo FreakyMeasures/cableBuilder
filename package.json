@@ -1,0 +1,19 @@
+{
+  "name": "btpacable",
+  "version": "1.0.0",
+  "description": "\"A custom cable builder\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FreakyMeasures/cableBuilder.git"
+  },
+  "author": "Jake Armijo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FreakyMeasures/cableBuilder/issues"
+  },
+  "homepage": "https://github.com/FreakyMeasures/cableBuilder#readme"
+}
