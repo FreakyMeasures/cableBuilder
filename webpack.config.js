@@ -1,29 +1,26 @@
-const isDev = process.env.NODE_ENV === 'development'
+const { resolve } = require("path");
 
 module.exports = {
-  mode: isDev ? 'development' : 'production',
-  entry: [
-    '@babel/polyfill', // enables async-await
-    './client/index.js'
-  ],
+  mode: "development",
+  entry: ["@babel/polyfill", "./client/index"],
   output: {
     path: __dirname,
-    filename: './public/bundle.js'
+    filename: "./public/bundle.js",
   },
+  context: __dirname,
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: [".js", ".jsx"],
   },
-  devtool: 'source-map',
-  watchOptions: {
-    ignored: /node_modules/
-  },
+  devtool: "source-map",
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      }
-    ]
-  }
-}
+        test: /jsx?$/,
+        include: resolve(__dirname, "./app"),
+        use: {
+          loader: "babel-loader",
+        },
+      },
+    ],
+  },
+};
